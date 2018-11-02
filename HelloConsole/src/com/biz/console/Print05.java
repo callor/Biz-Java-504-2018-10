@@ -15,5 +15,4 @@ public class Print05 {
 		System.out.printf("%d x %d = %d\n", 2,9,2*9);
 
 	}
-
 }
