@@ -4,21 +4,21 @@ public class Variable07 {
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
-		// ¼±Çà¿¬»êÀÚ
-		// º¯¼ö¸í ¾Õ¿¡ ++,-- ¿¬»êÀÚ°¡ ¸ÕÀú ¿À´Â°æ¿ì
+		// ì„ í–‰ì—°ì‚°ì
+		// ë³€ìˆ˜ëª… ì•ì— ++,-- ì—°ì‚°ìê°€ ë¨¼ì € ì˜¤ëŠ”ê²½ìš°
 		int intNum1 = 0;
 		
-		++intNum1; // intNum1 À» 1 Áõ°¡½ÃÄÑ¶ó
+		++intNum1; // intNum1 ì„ 1 ì¦ê°€ì‹œì¼œë¼
 		intNum1 += 1;
 		intNum1 = intNum1 + 1;
 
-		--intNum1; // intNum1À» 1 °¨¼Ò½ÃÄÑ¶ó
+		--intNum1; // intNum1ì„ 1 ê°ì†Œì‹œì¼œë¼
 		intNum1 -= 1;
 		intNum1 = intNum1 - 1;
 		
-		// ÈÄÇà ¿¬»êÀÚ
-		// º¯¼ö¸í µÚ¿¡ 
-		// ++, -- ¿¬»êÀÚ°¡ ³ªÁß¿¡ ¿À´Â°æ
+		// í›„í–‰ ì—°ì‚°ì
+		// ë³€ìˆ˜ëª… ë’¤ì— 
+		// ++, -- ì—°ì‚°ìê°€ ë‚˜ì¤‘ì— ì˜¤ëŠ”ê²½
 		intNum1++ ;
 		intNum1 += 1;
 		intNum1 = intNum1 + 1;
@@ -46,7 +46,7 @@ public class Variable07 {
 		
 		
 		intSum = ++intNum1;
-		// ¾Æ·¡¿Í °°Àº ÄÚµå
+		// ì•„ë˜ì™€ ê°™ì€ ì½”ë“œ
 		intNum1 += 1;
 		intSum = intNum1;
 		
@@ -62,12 +62,12 @@ public class Variable07 {
 		System.out.println(intNum1++);
 		System.out.println(intNum1);
 		
-		// ¸ÕÀú intNum1À» 1 Áõ°¡ ½ÃÅ²ÈÄ
-		// Áõ°¡µÈ °ªÀ» intSum ¿¡ ´©Àû
+		// ë¨¼ì € intNum1ì„ 1 ì¦ê°€ ì‹œí‚¨í›„
+		// ì¦ê°€ëœ ê°’ì„ intSum ì— ëˆ„ì 
 		intSum = ++intNum1;
 		
-		// ¿©±â¼­´Â intNum1 ÀÇ °ª º¯È­´Â
-		// intSumÀÇ ¿µÇâÀ» ¹ÌÄ¡Áö ¾Ê´Â´Ù.
+		// ì—¬ê¸°ì„œëŠ” intNum1 ì˜ ê°’ ë³€í™”ëŠ”
+		// intSumì˜ ì˜í–¥ì„ ë¯¸ì¹˜ì§€ ì•ŠëŠ”ë‹¤.
 		intSum = intNum1 ++;
 		
 		
