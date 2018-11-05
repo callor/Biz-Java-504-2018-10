@@ -18,10 +18,10 @@ public class VarriableType04 {
 		// char 문자형 변수값을
 		// int 형 변수에 복사하면
 		// 해당 문자의 ASCII코드가 복사 된다.
-		int intAlpha = charAlpha;
-		int intNum = charNum;
-		int intSpec = charSpec;
-		int intSpace = charSpace;
+		int intAlpha = charAlpha; // 'A' 가 65로 바뀌어 복사
+		int intNum = charNum; //'0'이 48로 바뀌어 복사
+		int intSpec = charSpec; // '%' 가 37로 바뀌어 복사
+		int intSpace = charSpace; // ' '가 32로 바뀌어 복사
 		
 		System.out.println("=== int char ===");
 		System.out.println(intAlpha);
