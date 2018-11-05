@@ -1,9 +1,9 @@
 /*
- * package´Â Æú´õÀÇ °³³äÀ» ÀÚ¹Ù ÇÁ·ÎÁ§Æ®¿¡¼­
- * ½±°Ô ±¸ºĞÇÏ±â À§ÇÑ °ÍÀÌ´Ù.
- * ¿©±âÀÇ IntNumber.java ¼Ò½ºÄÚµå´Â
- * ÇÁ·ÎÁ§Æ®Æú´õÀÇ src Æú´õ ¾Æ·¡ÀÇ com/biz/num Æú´õ¿¡
- * ÀÖÀ½À» ³ªÅ¸³»´Â ÀÌÁ¤Ç¥¿ªÇÒÀ» ÇÑ´Ù.
+ * packageëŠ” í´ë”ì˜ ê°œë…ì„ ìë°” í”„ë¡œì íŠ¸ì—ì„œ
+ * ì‰½ê²Œ êµ¬ë¶„í•˜ê¸° ìœ„í•œ ê²ƒì´ë‹¤.
+ * ì—¬ê¸°ì˜ IntNumber.java ì†ŒìŠ¤ì½”ë“œëŠ”
+ * í”„ë¡œì íŠ¸í´ë”ì˜ src í´ë” ì•„ë˜ì˜ com/biz/num í´ë”ì—
+ * ìˆìŒì„ ë‚˜íƒ€ë‚´ëŠ” ì´ì •í‘œì—­í• ì„ í•œë‹¤.
  */
 package com.biz.num;
 
@@ -11,7 +11,7 @@ public class IntNumber {
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
-		System.out.println(3000 * 3000); // 9 °öÇÏ±â 10ÀÇ 6½Â 
+		System.out.println(3000 * 3000); // 9 ê³±í•˜ê¸° 10ì˜ 6ìŠ¹ 
 		System.out.println(30000 * 30000);
 		System.out.println(300000 * 10000);
 

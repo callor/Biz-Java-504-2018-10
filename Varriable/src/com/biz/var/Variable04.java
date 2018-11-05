@@ -4,20 +4,20 @@ public class Variable04 {
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
-		int intNum1 ; // º¯¼ö¼±¾ğºÎ
-		intNum1 = 0; // ÃÊ±âÈ­,  clear
+		int intNum1 ; // ë³€ìˆ˜ì„ ì–¸ë¶€
+		intNum1 = 0; // ì´ˆê¸°í™”,  clear
 		
 		int intNum2 ;
-		intNum2 = 0; // clear°úÁ¤ÀÌ »ı·«µÈ °Í°ú °°´Ù
+		intNum2 = 0; // clearê³¼ì •ì´ ìƒëµëœ ê²ƒê³¼ ê°™ë‹¤
 		intNum2 = 30;
 		
-		// ¼±¾ğ, clear, ±×¸®°í ÀúÀåÀ» ÇÑ¹®ÀåÀ¸·Î
+		// ì„ ì–¸, clear, ê·¸ë¦¬ê³  ì €ì¥ì„ í•œë¬¸ì¥ìœ¼ë¡œ
 		int intNum3 = 50;
 		
 		/*
-		 * ¼±¾ğ¸¸ µÈ º¯¼ö¸¦ ÀĞÀ¸·Á°í ½ÃµµÇÏ¸é
-		 * ÃÊ±âÈ­(init) ¿À·ù°¡ ¹ß»ıÇÑ´Ù.
-		 * ÃÊ±âÈ­ = °ªÀ» clearÇÏ´Â °Í
+		 * ì„ ì–¸ë§Œ ëœ ë³€ìˆ˜ë¥¼ ì½ìœ¼ë ¤ê³  ì‹œë„í•˜ë©´
+		 * ì´ˆê¸°í™”(init) ì˜¤ë¥˜ê°€ ë°œìƒí•œë‹¤.
+		 * ì´ˆê¸°í™” = ê°’ì„ clearí•˜ëŠ” ê²ƒ
 			int intNum4; ==> int intNum4 = 0
 			System.out.println(intNum4);
 		*/

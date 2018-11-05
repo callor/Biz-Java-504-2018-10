@@ -11,8 +11,8 @@ public class Variable03 {
 		intNum1 = 30;
 		
 		intNum2 = intNum1; 
-		//intNum1ÀÇ °ª 30À» ÀĞ¾î¼­
-		// intNum2¿¡ ÀúÀåÇÏ¶ó = º¹»ç°³³ä
+		//intNum1ì˜ ê°’ 30ì„ ì½ì–´ì„œ
+		// intNum2ì— ì €ì¥í•˜ë¼ = ë³µì‚¬ê°œë…
 
 		System.out.println("intNum1: " + intNum1);
 		System.out.println("intNum2: " + intNum2);
@@ -22,11 +22,11 @@ public class Variable03 {
 		System.out.println("intNum2: " + intNum2);
 	
 		intNum1 = intNum1 + 10;
-		// 1. intNum1¿¡ ÀúÀåµÈ 50À» CPU·Î º¸³»°í
-		// 2. 10À» CPU·Î º¸³»°í
-		// 3. µÎ °ªÀ» + ¿¬»êÇÏ°í
-		// 4. ±× °á°ú¸¦ ´Ù½Ã intNum1 ¿¡ ÀúÀå
-		// ==> intNum1¿¡ 10À» Áõ°¡, ´©Àû
+		// 1. intNum1ì— ì €ì¥ëœ 50ì„ CPUë¡œ ë³´ë‚´ê³ 
+		// 2. 10ì„ CPUë¡œ ë³´ë‚´ê³ 
+		// 3. ë‘ ê°’ì„ + ì—°ì‚°í•˜ê³ 
+		// 4. ê·¸ ê²°ê³¼ë¥¼ ë‹¤ì‹œ intNum1 ì— ì €ì¥
+		// ==> intNum1ì— 10ì„ ì¦ê°€, ëˆ„ì 
 		intNum1 = intNum1 + 10;
 		intNum1 = intNum1 + 10;
 		

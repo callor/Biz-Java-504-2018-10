@@ -5,19 +5,19 @@ public class Print03 {
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
 				
-		// ¹®ÀÚ char, Character
-		// 1°³ÀÇ ¿µ¹®ÀÚ, ¼ıÀÚ, Æ¯¼ö¹®ÀÚ¸¦
-		// ÀúÀåÇÏ°Å³ª, Åë½Å(ÀÎÅÍ³İÆ÷ÇÔ)À» 
-		// ÅëÇØ Àü´ŞÇÏ°íÀÚ ÇÒ¶§ »ç¿ëÇÏ´Â °ÍÀ¸·Î
-		// ¸ğµç Á¤º¸¸¦ 1°³ÀÇ 1byte(8bit) °ø°£¿¡¼­
-		// Ã³¸®ÇÒ¼ö ÀÖ´Ù.
+		// ë¬¸ì char, Character
+		// 1ê°œì˜ ì˜ë¬¸ì, ìˆ«ì, íŠ¹ìˆ˜ë¬¸ìë¥¼
+		// ì €ì¥í•˜ê±°ë‚˜, í†µì‹ (ì¸í„°ë„·í¬í•¨)ì„ 
+		// í†µí•´ ì „ë‹¬í•˜ê³ ì í• ë•Œ ì‚¬ìš©í•˜ëŠ” ê²ƒìœ¼ë¡œ
+		// ëª¨ë“  ì •ë³´ë¥¼ 1ê°œì˜ 1byte(8bit) ê³µê°„ì—ì„œ
+		// ì²˜ë¦¬í• ìˆ˜ ìˆë‹¤.
 		System.out.println('A');
 		System.out.println('0');
 		System.out.println(' ');
 
-		// (int)'A' : ¹®ÀÚ AÀÇ ASCIIÄÚµå °ªÀ» º¸¿©´Ş¶ó
-		// (int)'0' : ¹®ÀÚ 0ÀÇ ASCIIÄÚµå °ªÀ» º¸¿©´Ş¶ó
-		// (int)' ' : space ¹®ÀÚÀÇ  ASCIIIÄÚµå °ªÀ» º¸¿©¶ó 
+		// (int)'A' : ë¬¸ì Aì˜ ASCIIì½”ë“œ ê°’ì„ ë³´ì—¬ë‹¬ë¼
+		// (int)'0' : ë¬¸ì 0ì˜ ASCIIì½”ë“œ ê°’ì„ ë³´ì—¬ë‹¬ë¼
+		// (int)' ' : space ë¬¸ìì˜  ASCIIIì½”ë“œ ê°’ì„ ë³´ì—¬ë¼ 
 		System.out.println((int)'A');
 		System.out.println((int)'0');
 		System.out.println((int)' ');

@@ -4,7 +4,7 @@ public class Variable05 {
 
 	public static void main(String[] args) {
 
-		int intNum1 = 0; // ¼±¾ğ°ú clear¸¦ µ¿½Ã¿¡
+		int intNum1 = 0; // ì„ ì–¸ê³¼ clearë¥¼ ë™ì‹œì—
 		int intSum = 0;
 		
 		intNum1 = intNum1 + 1; // num1 = 1

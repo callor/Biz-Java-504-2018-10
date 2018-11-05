@@ -3,13 +3,13 @@ public class NumberCalc {
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
-		// ¼ıÀÚ 50°ú 30ÀÇ µ¡¼À, »¬¼À, °ö¼À, ³ª´°¼À °á°ú¸¦
-		// ÄÜ¼Ö¿¡ Ç¥½ÃÇÏ´Â ÄÚµå¸¦ Áö±İºÎÅÍ ÀÛ¼º ÇØ º¸¼¼¿ä
+		// ìˆ«ì 50ê³¼ 30ì˜ ë§ì…ˆ, ëº„ì…ˆ, ê³±ì…ˆ, ë‚˜ëˆ—ì…ˆ ê²°ê³¼ë¥¼
+		// ì½˜ì†”ì— í‘œì‹œí•˜ëŠ” ì½”ë“œë¥¼ ì§€ê¸ˆë¶€í„° ì‘ì„± í•´ ë³´ì„¸ìš”
 		System.out.println("50+30=" + (50+30));
 		System.out.println("50-30=" + (50-30));
 		System.out.println("50*30=" + (50*30));
-		System.out.println("50/30=" + (50/30)); // ³ª´©±â(¸ò)   
-		System.out.println("50%30=" + (50%30)); // ³ª¸ÓÁö
+		System.out.println("50/30=" + (50/30)); // ë‚˜ëˆ„ê¸°(ëª«)   
+		System.out.println("50%30=" + (50%30)); // ë‚˜ë¨¸ì§€
 		
 
 	}
