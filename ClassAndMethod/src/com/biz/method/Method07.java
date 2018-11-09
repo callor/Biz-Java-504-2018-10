@@ -15,6 +15,11 @@ public class Method07 {
 		
 		intNum1 = addVar(intNum1);
 		System.out.println("D" + intNum1); // 300
+
+		intNum1 = addVar(intNum1);
+		System.out.println("D" + intNum1); // 300
+
+	
 	}
 	
 	public static int addVar(int intNum1) {
