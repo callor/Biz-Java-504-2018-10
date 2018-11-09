@@ -19,6 +19,9 @@ public class Method07 {
 		intNum1 = addVar(intNum1);
 		System.out.println("D" + intNum1); // 300
 
+		// 오늘은 금요일
+		// 금요일은 일찍 집에 갑시다
+		
 	
 	}
 	
