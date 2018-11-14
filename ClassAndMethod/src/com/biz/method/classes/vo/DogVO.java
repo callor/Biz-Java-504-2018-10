@@ -7,6 +7,7 @@ public class DogVO {
 	private String strGender;
 	private int intAge;
 	private String strColor;
+	
 	public String getStrName() {
 		return strName;
 	}

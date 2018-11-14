@@ -9,6 +9,64 @@ public class MemberVO {
 	private String strAddr;
 	private int intAge;
 	
+	public MemberVO() {
+		
+	}
+	
+	
+	
+	public String getStrId() {
+		return strId;
+	}
+
+
+
+	public void setStrId(String strId) {
+		this.strId = strId;
+	}
+
+
+
+	public String getStrName() {
+		return strName;
+	}
+
+
+
+	public void setStrName(String strName) {
+		this.strName = strName;
+	}
+
+
+
+	public String getStrTel() {
+		return strTel;
+	}
+
+
+
+	public void setStrTel(String strTel) {
+		this.strTel = strTel;
+	}
+
+
+
+	public String getStrAddr() {
+		return strAddr;
+	}
+
+
+
+	public void setStrAddr(String strAddr) {
+		this.strAddr = strAddr;
+	}
+
+
+
+	public int getIntAge() {
+		return intAge;
+	}
+
 	public void setIntAge(int intAge) {
 		if(intAge < 1) {
 			System.out.println("나이는 0세 보다 많아야 합니다");
@@ -21,9 +79,6 @@ public class MemberVO {
 		this.intAge = intAge;
 	}
 	
-	public void setStrTel(String strTel) {
-		this.strTel = strTel;
-	}
 	
 
 
