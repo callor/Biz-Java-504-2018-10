@@ -1,4 +1,4 @@
-package com.biz.method.classes.oop01;
+package com.biz.method.classes.book;
 
 public class BookDAO {
 
