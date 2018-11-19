@@ -1,4 +1,4 @@
-package com.biz.collects;
+package com.biz.collects.arraylist;
 
 import java.util.ArrayList;
 
