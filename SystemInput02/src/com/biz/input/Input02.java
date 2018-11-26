@@ -18,7 +18,7 @@ public class Input02 {
 			System.out.println(intNum1 + intNum2);
 		} catch (Exception e) {
 			// TODO: handle exception
-			System.out.println("숫자로 변환하는데 오류 발생");
+			System.out.println("");
 		}
 
 	}
