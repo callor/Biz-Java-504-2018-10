@@ -20,17 +20,27 @@ public class InoutVO extends Object {
 	public String getStrDate() {
 		return strDate;
 	}
-	public void setStrDate(String strDate) {
+	
+	public boolean setStrDate(String strDate) {
+		// boolean retOk = true;
 		SimpleDateFormat sd 
 			= new SimpleDateFormat("yyyyMMdd");
 		sd.setLenient(false);
 		try {
+			// 날짜 유효성검사를 시도
 			sd.parse(strDate);
 			this.strDate = strDate;
 		} catch (Exception e) {
+			// 만약 유효성에 어긋나면
+			System.out.println("날짜형식 오류");
+			return false;
 			// TODO: handle exception
+			// retOk = false;
 		}
+		return true;
+		// return retOk;
 	}
+	
 	public String getStrIO() {
 		return strIO;
 	}

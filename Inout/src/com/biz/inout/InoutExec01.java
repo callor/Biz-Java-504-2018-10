@@ -13,9 +13,11 @@ public class InoutExec01 {
 		for(int i = 0 ; i < 3 ; i++) {
 		
 			InoutService inoutService = new InoutService();
-			inoutService.makeInout();
-			inoutService.toString();
-
+			if(inoutService.makeInout() == false) {
+				i--;
+				continue;
+			}
+			System.out.println(inoutService.toString());
 		}
 	}
 }
