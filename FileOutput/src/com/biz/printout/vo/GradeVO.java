@@ -3,6 +3,7 @@ package com.biz.printout.vo;
 public class GradeVO {
 	
 	private String strNum;
+	
 	private int intKor;
 	private int intEng;
 	private int intMath;
