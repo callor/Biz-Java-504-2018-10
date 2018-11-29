@@ -73,12 +73,17 @@ public class GradeToPrint01 {
 				int intEng = vo.getIntEng();
 				int intMath = vo.getIntMath();
 				
+				// vo로 부터 getter해서 임시 변수에 담아놓은
+				// 학번, 성적들을 파일에 기록
 				pw.print(strNum + ":");
 				pw.print(intKor + ":");
 				pw.print(intEng + ":");
 				pw.println(intMath );
 			}
+			// 기록이 완료된후 파일을 닫아서 완료
 			pw.close();
+			
+			// 사용자에게 모두 완료 되었다는 메시지를 전달
 			System.out.println("성적표 파일 저장 완료");
 			
 		} catch (FileNotFoundException e) {
