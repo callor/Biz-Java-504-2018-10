@@ -1,3 +1,4 @@
+package com.biz.hello;
 
 public class Test {
 

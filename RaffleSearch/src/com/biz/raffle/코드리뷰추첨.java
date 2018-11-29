@@ -4,7 +4,7 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 
-public class RaffleExec02 {
+public class 코드리뷰추첨 {
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
