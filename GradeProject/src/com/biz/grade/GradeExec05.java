@@ -49,17 +49,38 @@ public class GradeExec05 {
 		int namesC = names.length;
 		int intIndex = (int)(Math.random() * namesC);
 		
-		?? names[intIndex].split(":");
+		// names[intIndex] =  1:ABC:에이씨
+		String[] arrName = names[intIndex].split(":");
+
+		// arrName[0] = 숫자
+		// arrName[1] = 영문자
+		// arrName[2] = 우리말
+//		System.out.println(arrName[0]);
+//		System.out.println(arrName[1]);
+//		System.out.println(arrName[2]);
 		
-		System.out.println("다음 제시된 단어를 입력하시오");
-		System.out.println(names[intIndex]);
-		
-		Scanner scanner = new Scanner(System.in);
-		String inputName = scanner.nextLine();
-		
-		if(names[intIndex].contains(inputName)) {
-			System.out.println("맞았습니다");
+		try {
+			
+			System.out.print("[" + arrName[2] + "]");
+			System.out.println("에 해당하는 영어 이름은?");
+			Scanner scanner = new Scanner(System.in);
+			System.out.print(">> ");
+			String inputName = scanner.nextLine();
+			if(arrName[1].equalsIgnoreCase(inputName)) {
+				System.out.println("맞았습니다");
+			} else {
+				System.out.println("아쉽네요");
+				 System.out.println(names[intIndex]);
+			}
+			
+		} catch (Exception e) {
+			// TODO: handle exception
+			System.out.println("문제 출제 오류");
 		}
+		
+		
+		
+		
 		//============================
 		 
 	}
