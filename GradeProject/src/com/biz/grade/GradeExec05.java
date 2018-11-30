@@ -49,6 +49,8 @@ public class GradeExec05 {
 		int namesC = names.length;
 		int intIndex = (int)(Math.random() * namesC);
 		
+		?? names[intIndex].split(":");
+		
 		System.out.println("다음 제시된 단어를 입력하시오");
 		System.out.println(names[intIndex]);
 		
