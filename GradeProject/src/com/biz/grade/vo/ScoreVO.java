@@ -3,6 +3,7 @@ package com.biz.grade.vo;
 public class ScoreVO {
 	
 	private String strNum;
+	
 	private int intKor;
 	private int intEng;
 	private int intMath;
@@ -46,6 +47,14 @@ public class ScoreVO {
 	public void setFloatAvg(float floatAvg) {
 		this.floatAvg = floatAvg;
 	}
+	
+	@Override
+	public String toString() {
+		return "ScoreVO [strNum=" + strNum + ", intKor=" + intKor + ", intEng=" + intEng + ", intMath=" + intMath
+				+ ", intSum=" + intSum + ", floatAvg=" + floatAvg + "]";
+	}
+	
+	
 	
 	
 
