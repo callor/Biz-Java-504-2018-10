@@ -21,17 +21,13 @@ public class GradeExec02 {
 		List<StudentVO> stList = gr.getStList();
 		for(StudentVO vo : stList) {
 			ScoreVO svo = new ScoreVO();
-			
 			svo.setStrNum(vo.getStrNum());
-			
 			svo.setIntKor(makeScore.makeScore());
 			svo.setIntEng(makeScore.makeScore());
 			svo.setIntMath(makeScore.makeScore());
-			
 			int intSum = svo.getIntKor();
 			intSum += svo.getIntEng();
 			intSum += svo.getIntMath();
-			
 			svo.setIntSum(intSum);
 			svo.setFloatAvg(intSum / 3.0f);
 			scoreList.add(svo);
