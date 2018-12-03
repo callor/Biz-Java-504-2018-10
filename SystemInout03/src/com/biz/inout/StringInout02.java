@@ -6,7 +6,7 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 
-public class StringInput02 {
+public class StringInout02 {
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
@@ -40,7 +40,10 @@ public class StringInput02 {
 		// 문자로 변환하여 콘솔에 출력하시오
 		int listLen = intList.size();
 		for(int i = 0 ; i < listLen; i++) {
-			System.out.println(intList.get(i));
+			int _t = intList.get(i);
+			System.out.println((char)_t);
+			
+			System.out.println((char)(int) intList.get(i));
 		}
 		
 		for(int i : intList) {
