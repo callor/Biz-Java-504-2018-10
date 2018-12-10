@@ -20,6 +20,8 @@ public class IoComeExec02 {
 			is.ioInOutInsert(vo); // list에 추가하라고
 			// vo를 전달
 		}
+		
+		
 	}
 
 	public static IoComeVO ioInsert() {
