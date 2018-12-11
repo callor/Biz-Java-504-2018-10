@@ -23,6 +23,9 @@ public class IoComeService {
 		System.out.println("거래일자\t구분\t상품이름\t단가\t수량");
 		System.out.println("-----------------------------------------");
 
+		int iSum = 0 ;
+		int oSum = 0;
+		
 		for(IoListVO vo : ioList) {
 			
 			String strIo = "매출";
@@ -37,6 +40,10 @@ public class IoComeService {
 				oTotal = vo.getIntPrice() * vo.getIntQuan();
 			}
 			
+			// iTotal과 oTotal 0 아니면 합계
+			iSum += iTotal;
+			oSum += oTotal;
+			
 			System.out.print(vo.getStrDate() + "\t");
 			System.out.print(vo.getStrCName() + "\t");
 //			System.out.print(vo.getIntIO() + "\t");
@@ -48,8 +55,9 @@ public class IoComeService {
 			System.out.print(oTotal + "\n");
 			
 		}
-		
-	
+		System.out.println("====================");
+		System.out.println("총합\t" + iSum + "\t" + oSum);
+		System.out.println("--------------------");
 	}
 	
 	public void readFile() {
@@ -87,14 +95,7 @@ public class IoComeService {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
-		
-		
-		
-		
-		
 	}
-	
-	
 }
 
 
