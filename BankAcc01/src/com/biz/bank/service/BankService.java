@@ -4,6 +4,7 @@ import java.io.BufferedReader;
 import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.IOException;
+import java.io.PrintWriter;
 import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
@@ -21,6 +22,33 @@ public class BankService {
 		this.strFileName = strFileName; 
 	}
 
+	public void bankWrite() {
+		
+		PrintWriter pw ;
+		try {
+			pw = new PrintWriter(strFileName);
+			for(BankVO vo : bankList) {
+			
+				String strId = vo.getStrId();
+				int intBalance = vo.getIntBalance();
+				String strLastDate = vo.getStrLastDate();
+				
+				// printf()
+				String wString =
+					String.format("%s:%d:%s", strId,intBalance, strLastDate);
+				System.out.println(wString);
+				pw.println(wString);
+				
+			}
+			pw.close();
+		} catch (FileNotFoundException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		
+		
+	}
+	
 	public void bankListView() {
 		System.out.println("++++++++++++++++++++++++");
 		System.out.println("계좌번호\t잔액\t최종거래일");
