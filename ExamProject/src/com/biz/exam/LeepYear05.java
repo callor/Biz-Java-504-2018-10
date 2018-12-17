@@ -4,7 +4,7 @@ package com.biz.exam;
  * 1592년 부터 2018년까지 윤년인 해를 찾아서
  * 윤년들.txt 파일로 저장
  * 
- * 1992년 윤년
+ * 1992년
  */
 public class LeepYear05 {
 
