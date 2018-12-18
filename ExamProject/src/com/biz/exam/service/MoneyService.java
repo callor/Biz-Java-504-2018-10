@@ -2,9 +2,9 @@ package com.biz.exam.service;
 
 import java.io.FileNotFoundException;
 import java.io.PrintWriter;
-import java.util.HashMap;
 import java.util.Iterator;
 import java.util.Map;
+import java.util.TreeMap;
 
 public class MoneyService {
 	
@@ -14,16 +14,16 @@ public class MoneyService {
 	
 	public MoneyService() {
 		int50K = 50000;
-		mList = new HashMap();
+		mList = new TreeMap();
 		paperName = new String[]{
-			"5만원권",
-			"1만원권",
-			"5천원권",
-			"1천원권",
-			"500원권",
-			"100원권",
-			"50원권",
-			"10원권"
+			"1. 5만원권",
+			"2. 1만원권",
+			"3. 5천원권",
+			"4. 1천원권",
+			"5. 500원권",
+			"6. 100원권",
+			"7. 50원권",
+			"8. 10원권"
 		};
 	}
 	
