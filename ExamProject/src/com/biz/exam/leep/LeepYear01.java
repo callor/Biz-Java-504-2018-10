@@ -1,4 +1,4 @@
-package com.biz.exam;
+package com.biz.exam.leep;
 
 public class LeepYear01 {
 

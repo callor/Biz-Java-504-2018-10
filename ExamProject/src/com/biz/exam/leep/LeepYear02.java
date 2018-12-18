@@ -1,4 +1,4 @@
-package com.biz.exam;
+package com.biz.exam.leep;
 
 import com.biz.exam.method.LeepMethod;
 
