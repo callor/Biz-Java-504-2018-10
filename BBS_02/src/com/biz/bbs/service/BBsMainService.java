@@ -51,15 +51,31 @@ public class BBsMainService {
 			String strM = scan.nextLine();
 			
 			int intM = Integer.valueOf(strM);
+			/*
+			 * version 1
 			if(intM == 0) return ;
 			if(intM == 1) this.viewBBsList();
 			if(intM == 2) this.insertBBS() ; // 데이터 추가
-			if(intM == 3) this.updateBBS() ; // 데이터 수정
+			if(intM == 3) {
+				// 수정할 데이터를 확인
+				this.viewBBsList();
+				this.updateBBS() ; // 데이터 수정
+			}
 			if(intM == 4) {
 				// 삭제할 데이터를 확인
 				this.viewBBsList();
 				this.deleteBBS() ; // 데이터 삭제
 			}
+			*/
+			
+			if(intM == 0) return;
+			else if(intM == 2) this.insertBBS();
+			else this.viewBBsList();
+			
+			if(intM == 3) this.updateBBS();
+			if(intM == 4) this.deleteBBS();
+			
+			
 		}
 	}
 	
@@ -138,7 +154,47 @@ public class BBsMainService {
 	}
 
 	private void updateBBS() {
-		// TODO Auto-generated method stub
+		// TODO 게시판 리스트에서 번호를 선택하면 수정 시작
+		System.out.print("수정할 번호 >> ");
+		String strId = scan.nextLine();
+		long longId = Long.valueOf(strId);
+		
+		BBsMainVO vo = mainDao.findById(longId);
+		
+		System.out.println("수정:내용입력, 수정취소:Enter");
+		System.out.println("------------------------------------");
+		System.out.println("작성자 : " + vo.getB_auth());
+		System.out.print("수정 : ");
+		String strAuth = scan.nextLine();
+		
+		System.out.println("제목 : " + vo.getB_subject());
+		System.out.print("수정 : ");
+		String strSubject = scan.nextLine();
+		
+		System.out.println("내용 : " + vo.getB_text());
+		System.out.print("수정 : ");
+		String strText = scan.nextLine();
+		
+		/*
+		 *  만약 내용(작성자, 제목, 내용)을 입력하지 않고 Enter만 입력했으면
+		 *  원래 내용을 그래도 유지 하도록 한다.
+		 */
+		String sA = vo.getB_auth();
+		if(strAuth.equals("") == false) {
+			vo.setB_auth(strAuth);
+		} else {
+			vo.setB_auth(vo.getB_auth());
+			vo.setB_auth(sA);
+		}
+		
+		if(!strSubject.equals("")) {
+			vo.setB_subject(strSubject);
+		}
+		
+		if(!strText.equals("")) {
+			vo.setB_text(strText);
+		}
+		mainDao.update(vo);
 		
 	}
 
