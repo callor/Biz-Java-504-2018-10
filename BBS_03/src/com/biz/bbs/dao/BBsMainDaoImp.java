@@ -100,6 +100,26 @@ public class BBsMainDaoImp implements BBsMainDao {
 				
 	}
 
+	
+	private BBsMainVO resultSet2BBsMainVO(ResultSet rs) {
+		// 게시판 V2.0 Upgrade
+		try {
+			BBsMainVO vo = new BBsMainVO(
+					rs.getLong("b_id"),
+					rs.getString("b_date"),
+					rs.getString("b_auth"),
+					rs.getString("b_subject"),
+					rs.getString("b_text")
+					);
+			return vo;
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		return null;
+		
+	}
+	
 	@Override
 	public List<BBsMainVO> selectAll() {
 		// TODO DB로부터 모든 게시판 데이터를 읽어 List로 리턴
@@ -122,7 +142,7 @@ public class BBsMainDaoImp implements BBsMainDao {
 			// while(true)
 			// if( rs.next() == false ) break
 			while(rs.next()) {
-				
+				/*
 				Long id = rs.getLong("b_id");
 				String strDate = rs.getString("b_date");
 				String strAuth = rs.getString("b_auth");
@@ -135,8 +155,21 @@ public class BBsMainDaoImp implements BBsMainDao {
 				vo.setB_auth(strAuth);
 				vo.setB_subject(strSubject);
 				vo.setB_text(strText);
+				*/
 				
-				bbsList.add(vo);
+				// 게시판 V2.0 Upgrade
+				/*
+				BBsMainVO vo = new BBsMainVO(
+						rs.getLong("b_id"),
+						rs.getString("b_date"),
+						rs.getString("b_auth"),
+						rs.getString("b_subject"),
+						rs.getString("b_text")
+						);
+				
+				*/
+				// 게시판 V2.1
+				bbsList.add(resultSet2BBsMainVO(rs));
 				
 			}
 			rs.close();
@@ -165,15 +198,32 @@ public class BBsMainDaoImp implements BBsMainDao {
 			ResultSet rs = ps.executeQuery();
 			
 			rs.next();
+			// 게시판 V2.1
+			return resultSet2BBsMainVO(rs);
 			
+			/*
 			BBsMainVO vo = new BBsMainVO();
 			vo.setB_id(rs.getLong("b_id"));
 			vo.setB_date(rs.getString("b_date"));
 			vo.setB_auth(rs.getString("b_auth"));
 			vo.setB_subject(rs.getString("b_subject"));
 			vo.setB_text(rs.getString("b_text"));
+			*/
 			
+			// 게시판 V2.0 Upgrade
+			/*
+			BBsMainVO vo = new BBsMainVO(
+					rs.getLong("b_id"),
+					rs.getString("b_date"),
+					rs.getString("b_auth"),
+					rs.getString("b_subject"),
+					rs.getString("b_text")
+					);
 			return vo;
+			*/
+			
+
+			
 			
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block

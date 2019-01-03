@@ -130,11 +130,21 @@ public class BBsMainService {
 		strDate = ld.toString();
 		
 		//변수를 vo에 담기
+		/*
 		BBsMainVO vo = new BBsMainVO();
 		vo.setB_date(strDate);
 		vo.setB_auth(strAuth);
 		vo.setB_subject(strSubject);
 		vo.setB_text(strText);
+		*/
+		
+		// 게시판 2.0으로 변경
+		BBsMainVO vo = new BBsMainVO(
+				strDate,
+				strAuth,
+				strSubject,
+				strText
+				);
 		
 		// vo를 dao에게 전달
 		mainDao.insert(vo);
