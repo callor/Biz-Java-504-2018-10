@@ -3,7 +3,9 @@ package com.biz.grade.dao;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
+import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.ArrayList;
 import java.util.List;
 
 import com.biz.grade.vo.StudentVO;
@@ -51,19 +53,85 @@ public class StudentDaoImp implements StudentDao {
 
 	@Override
 	public List<StudentVO> selectAll() {
-		// TODO Auto-generated method stub
+		
+		// TODO 전체 학생의 데이터 조회하여 LIST로 리턴
+		String sql = " SELECT * FROM tbl_student ";
+		
+		PreparedStatement ps ;
+		List<StudentVO> stdList = new ArrayList();
+		
+		try {
+			ps = dbConn.prepareStatement(sql);
+			ResultSet rs  = ps.executeQuery();
+			
+			while(rs.next()) {
+				
+				StudentVO vo = new StudentVO(
+						rs.getString("st_num"),
+						rs.getString("st_name"),
+						rs.getString("st_tel"),
+						rs.getString("st_addr")
+				 );
+				stdList.add(vo);
+			}
+			rs.close();
+			ps.close();
+			
+			return stdList;
+
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		
+		
 		return null;
 	}
 
 	@Override
 	public StudentVO findByNum(String st_num) {
-		// TODO Auto-generated method stub
+		// TODO 학번으로 조회하여 VO를 리턴
+		String sql = " SELECT * FROM tbl_student ";
+		sql += " WHERE st_num = '" + st_num + "'" ;
+//		sql += " WHERE st_num = ? " ; 
+		
+		PreparedStatement ps ;
+		
+		try {
+			ps = dbConn.prepareStatement(sql);
+//			 ps.setString(1, "001");
+			
+			ResultSet rs = ps.executeQuery();
+			if(rs.next())  {
+				StudentVO vo = new StudentVO(
+						rs.getString("st_num"),
+						rs.getString("st_name"),
+						rs.getString("st_tel"),
+						rs.getString("st_addr")
+						
+						);
+				
+				return vo;
+			}
+			return null;
+			
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		
 		return null;
 	}
 
 	@Override
 	public List<StudentVO> findByName(String st_name) {
-		// TODO Auto-generated method stub
+		// TODO 이름으로 조회하여 LIST 로 리턴
+		String sql = " SELECT * FROM tbl_student ";
+		sql +=  " WHERE st_name = ? ";
+		
+		// SQL의 LIKE 키워드를 사용해서 SQL을 작성
+		// sql += " WHERE st_name LIKE '%" + st_name + "%'"
+		
 		return null;
 	}
 
