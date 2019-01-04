@@ -65,16 +65,21 @@ public class ScoreService {
 			return ;
 		}
 		
-		// 학번을 입력했으면
+		// 학  번을 입력했으면
 		// 학생정보로 부터 학번에 대한 학생데이터를 조회해서
 		// 보여주기
 		StudentVO stdVO = stdDao.findByNum(strNum);
-		System.out.println("==============================");
-		System.out.println("학번:" + stdVO.getSt_num());
-		System.out.println("이름:" + stdVO.getSt_name());
-		System.out.println("전화번호:" + stdVO.getSt_tel());
-		System.out.println("주소:" + stdVO.getSt_addr());
-		System.out.println("==============================");
+		if(stdVO == null) {
+			System.out.println("학번이 존재하지 않습니다");
+			return ;
+		} else {
+			System.out.println("==============================");
+			System.out.println("학번:" + stdVO.getSt_num());
+			System.out.println("이름:" + stdVO.getSt_name());
+			System.out.println("전화번호:" + stdVO.getSt_tel());
+			System.out.println("주소:" + stdVO.getSt_addr());
+			System.out.println("==============================");
+		}
 		
 		// 학번을 입력했으면
 		// 만약 학생 점수가 있으면 보여주기
@@ -89,9 +94,27 @@ public class ScoreService {
 			System.out.print(scVO.getSc_eng() + "\t");
 			System.out.print(scVO.getSc_math() + "\n");
 			System.out.println("==============================");
+
+			this.updateScore(strNum);
+			return ;
+		
 		}
 		
+		// 점수 항목 없는 경우에 새로 값을 입력 받는 부분
+		
 		// 값을 새로 추가
+		ScoreVO vo = inputScore(strNum);
+				
+		int insertCount = scDao.insert(vo);
+		if(insertCount > 0) {
+			System.out.println("데이터 추가 성공!!!");
+		} else {
+			System.out.println("데이터 추가 실패!!!");
+		}
+		
+	}
+	
+	private ScoreVO inputScore(String strNum) {
 		System.out.print("국어>> ");
 		String strKor = scan.nextLine();
 
@@ -112,27 +135,45 @@ public class ScoreService {
 		} catch (Exception e) {
 			// TODO: handle exception
 			System.out.println("점수 입력 오류");
-			return ;
+			return null ;
 		}
 		
 		ScoreVO vo = new ScoreVO();
-		vo.setSc_num(strNum);
+		vo.setSc_num(strNum); // 학번
 		vo.setSc_kor(intKor);
 		vo.setSc_eng(intEng);
 		vo.setSc_math(intMath);
 		
-		scDao.insert(vo);
-		
+		return vo;
 	}
+	
+	
 	
 	private void deleteScore() {
 		// TODO Auto-generated method stub
 		
 	}
 
+	// menu에서 수정을 선택했을때 먼저 실행될 updateScore()
 	private void updateScore() {
-		// TODO Auto-generated method stub
-		
+		// TODO 키보드로 학번을 입력받은 후 updateScore(strNum) 에 전달
+		System.out.println("====================");
+		System.out.print("학번 >> ");
+		String strNum = scan.nextLine();
+		updateScore(strNum);
+	}
+	
+	
+	// updateScore()와 insertScore()에서 실행할 method()
+	private void updateScore(String strNum) {
+		// TODO 키보드에서 점수를 입력받고 Dao.Update 실행
+		ScoreVO vo = inputScore(strNum) ;
+		if( scDao.update(vo) > 0) {
+			System.out.println("데이터 업데이트 성공!!!");
+		} else {
+			System.out.println("데이터 업데이트 실패!!!");
+		};
+				
 	}
 
 
