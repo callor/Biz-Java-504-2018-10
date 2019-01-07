@@ -130,33 +130,142 @@ public class StudentService {
 	}
 
 	private void deleteStudent() {
-		// TODO Auto-generated method stub
+		// TODO 학생정보 삭제
+		/*
+		 * 학번을 입력받고
+		 * 학생정보를 보여주고
+		 * 삭제할 것인지 확인하고
+		 * stdDao.delete() 메서드 호출해서 삭제 실행
+		 */
+		System.out.println("=====================");
+		System.out.println("학생정보 삭제");
+		System.out.println("---------------------");
+		System.out.print("삭제할 학번 >> ");
+		String strNum = scan.nextLine();
+		
+		StudentVO stVO = stdDao.findByNum(strNum);
+		if(stVO != null) {
+			
+			this.viewStudent(stVO);
+
+			System.out.println("===================");
+			System.out.print("정말 삭제 할까요 (YES) ");
+			String strYes = scan.nextLine();
+			
+			if(strYes.equals("YES")) {
+				if(stdDao.delete(strNum) > 0) {
+					System.out.println("삭제 성공!!");
+				} else {
+					System.out.println("삭제 실패!!");
+				}
+			}
+			
+		} else {
+			System.out.println("찾는 학번이 없습니다");
+		}
 		
 	}
 
 	private void updateStudent() {
 		// TODO 학생정보 수정
-		System.out.print("학번>> ");
-		String st_num = scan.nextLine();
+		System.out.print("검색조건 1.번호 2.이름");
+		String strM = scan.nextLine();
+		StudentVO vo = null;
+		if(Integer.valueOf(strM) == 1) {
+			System.out.print("학번>> ");
+			String st_num = scan.nextLine();
+			vo = stdDao.findByNum(st_num);
+			viewStudent(vo);
+			
+		} else if (Integer.valueOf(strM) == 2) {
+			System.out.print("이름 >> ");
+			String st_name = scan.nextLine();
+			List<StudentVO> stdList 
+				= stdDao.findByName(st_name);
+			viewStudent(stdList);
+			
+		}
+	}
+	private void viewStudent(List<StudentVO> stdList) {
+		System.out.println("==================================");
+		System.out.println("학번\t이름\t전화번호\t주소");
+		System.out.println("----------------------------------");
+		for(StudentVO vo : stdList) {
+			System.out.print(vo.getSt_num() + "\t");
+			System.out.print(vo.getSt_name() + "\t");
+			System.out.print(vo.getSt_tel() + "\t");
+			System.out.print(vo.getSt_addr() + "\n");
+		}
+		System.out.println("==================================");
 		
-		StudentVO vo = stdDao.findByNum(st_num);
+	}
+
+	private void viewStudent(StudentVO vo) {
 		if(vo != null ) {
-			System.out.println("======================");
+			System.out.println("===========================");
 			System.out.println("학번:" + vo.getSt_num());
 			System.out.println("이름:" + vo.getSt_name());
 			System.out.println("전화번호:" + vo.getSt_tel());
 			System.out.println("주소:" + vo.getSt_addr());
-			System.out.println("========================");
+			System.out.println("============================");
 		
 		} else {
 			System.out.println("학생정보를 찾을 수 없음");
 		}
-		
-		
+
 	}
 
 	private void insertStudent() {
-		// TODO Auto-generated method stub
+		// TODO 학생정보 추가
+		while(true) {
+			System.out.println("==================");
+			System.out.println("학생정보추가");
+			System.out.println("==================");
+			System.out.print("학번 >> ");
+			String strNum = scan.nextLine();
+			int intNum ;
+			
+			try {
+				intNum = Integer.valueOf(strNum);
+			} catch (Exception e) {
+				System.out.println("학번은 숫자로만 입력하세요");
+				continue;
+			}
+			
+			if(intNum == 0) {
+				System.out.println("학생정보 추가 업무 종료!!");
+				return ;
+			}
+			
+			StudentVO stVO 
+			= stdDao.findByNum(strNum);
+			if(stVO != null) {
+				System.out.println("이미 등록된 학번");
+				continue;
+			}
+			
+			
+			System.out.print("이름 >> ");
+			String strName = scan.nextLine();
+			
+			System.out.print("전화번호 >> ");
+			String strTel = scan.nextLine();
+			
+			System.out.print("주소 >> ");
+			String strAddr = scan.nextLine();
+			
+			StudentVO vo = new StudentVO(
+						strNum,
+						strName,
+						strTel,
+						strAddr
+					);
+			
+			stdDao.insert(vo);
+		}
+		
+		
+		
 		
 	}
 	

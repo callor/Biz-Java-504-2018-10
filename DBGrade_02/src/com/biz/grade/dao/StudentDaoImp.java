@@ -67,13 +67,14 @@ public class StudentDaoImp implements StudentDao {
 	public StudentVO findByNum(String st_num) {
 		// TODO 학번으로 조회하여 VO를 리턴
 		String sql = " SELECT * FROM tbl_student ";
-		sql += " WHERE st_num = '" + st_num + "'" ;
-//		sql += " WHERE st_num = ? " ; 
+//		sql += " WHERE st_num = '" + st_num + "'" ;
+		sql += " WHERE st_num = ? " ; 
 		
 		PreparedStatement ps ;
 		
 		try {
 			ps = dbConn.prepareStatement(sql);
+			ps.setInt(1, Integer.valueOf(st_num));
 //			 ps.setString(1, "001");
 			
 			ResultSet rs = ps.executeQuery();
