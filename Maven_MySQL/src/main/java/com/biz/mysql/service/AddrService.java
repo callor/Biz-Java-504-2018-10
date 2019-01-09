@@ -2,6 +2,7 @@ package com.biz.mysql.service;
 
 import java.util.List;
 import java.util.Properties;
+import java.util.Scanner;
 
 import javax.sql.DataSource;
 
@@ -20,6 +21,7 @@ import com.biz.mysql.vo.AddrVO;
 public class AddrService {
 	
 	SqlSessionFactory sqlSession ;
+	Scanner scan ;
 	
 	private String otherDriver = "org.gjt.mm.mysql.Driver";
 	private String mySqlDriver = "com.mysql.jdbc.Driver";
@@ -28,6 +30,8 @@ public class AddrService {
 	private String password ="!Biz1234";
 	
 	public AddrService() {
+		
+		scan = new Scanner(System.in);
 
 		// import java.util.Properties
 		Properties props = new Properties();
@@ -81,9 +85,41 @@ public class AddrService {
 		for(AddrVO vo : addrList) {
 			System.out.println(vo);
 		}
+	}
+	
+	public void findByName() {
 		
-				
+		System.out.println("=========================");
+		System.out.print("이름 >> ");
+		String strName = scan.nextLine();
 		
+		SqlSession session = this.sqlSession.openSession();
+		AddrDao dao = session.getMapper(AddrDao.class);
+		
+		List<AddrVO> addrList = dao.findByName(strName);
+
+		for(AddrVO vo : addrList) {
+			
+			System.out.println(vo);
+		}
+		
+		
+	} // findName End
+	
+	public int insert(AddrVO vo) {
+		
+		SqlSession session = this.sqlSession.openSession();
+		AddrDao dao = session.getMapper(AddrDao.class);
+		
+		int ret = dao.insert(vo);
+		
+		// insert, update, delete를 실행후에는
+		// 반드시 commit, close 실행 하라
+		session.commit();
+		session.close();
+		
+		System.out.println(ret);
+		return ret;
 		
 	}
 

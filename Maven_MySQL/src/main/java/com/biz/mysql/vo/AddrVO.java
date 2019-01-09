@@ -10,6 +10,14 @@ public class AddrVO {
 		super();
 		// TODO Auto-generated constructor stub
 	}
+
+	public AddrVO(String ad_name, String ad_tel, String ad_addr) {
+		super();
+		this.id = 0;
+		this.ad_name = ad_name;
+		this.ad_tel = ad_tel;
+		this.ad_addr = ad_addr;
+	}
 	
 	public AddrVO(long id, String ad_name, String ad_tel, String ad_addr) {
 		super();
