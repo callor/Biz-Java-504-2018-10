@@ -115,4 +115,14 @@ public class StdService {
 		}
 	}
 
+	public StdVO stdView(String st_num) {
+
+		SqlSession session = this.sessionFactory.openSession();
+		StdDao dao = session.getMapper(StdDao.class);
+		
+		StdVO vo = dao.findByNum(st_num);
+		return vo;
+	
+	}
+
 }

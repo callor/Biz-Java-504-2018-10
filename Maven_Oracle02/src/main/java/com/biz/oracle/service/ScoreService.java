@@ -7,7 +7,9 @@ import org.apache.ibatis.session.SqlSession;
 import org.apache.ibatis.session.SqlSessionFactory;
 
 import com.biz.oracle.dao.ScoreDao;
+import com.biz.oracle.dao.ScoreSumDao;
 import com.biz.oracle.db.OracleSqlFactory;
+import com.biz.oracle.vo.ScoreSumVO;
 import com.biz.oracle.vo.ScoreVO;
 
 public class ScoreService {
@@ -20,6 +22,16 @@ public class ScoreService {
 		scan = new Scanner(System.in);
 		OracleSqlFactory sqlFactory = new OracleSqlFactory();
 		this.sessionFactory = sqlFactory.getSessionFactory();
+	}
+	
+	
+	public ScoreSumVO viewScoreSum(String st_num) {
+		SqlSession session = sessionFactory.openSession();
+		ScoreSumDao dao = session.getMapper(ScoreSumDao.class);
+		
+		ScoreSumVO vo = dao.findStByNum(st_num);
+		// System.out.println(vo);
+		return vo;
 	}
 	
 	public List<ScoreVO> viewScore(String st_num) {
