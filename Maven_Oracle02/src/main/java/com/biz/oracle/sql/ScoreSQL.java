@@ -14,11 +14,12 @@ public class ScoreSQL {
 	public static final String SC_INSERT 
 		= " INSERT INTO tbl_score(id,st_num,sc_sb_code,sc_score)"
 		+ " VALUES(#{id},#{st_num},#{sc_sb_code},#{sc_score}) ";
+	
 	public static final String SC_UPDATE 
 		= " UPDATE tbl_score "
-		+ " SET st_num = ?, "
-		+ " sc_sb_code = ?,"
-		+ " sc_score = ? "
+		+ " SET st_num = #{st_num}, "
+		+ " sc_sb_code = #{sc_sb_code},"
+		+ " sc_score = #{sc_score} "
 		+ " WHERE id = #{id} ";
 	
 	public static final String SC_DELETE

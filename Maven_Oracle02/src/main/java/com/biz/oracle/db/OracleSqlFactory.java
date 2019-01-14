@@ -33,12 +33,16 @@ public class OracleSqlFactory {
 		props.put("USER", DBContract.ORACLE_PRO.user);
 		props.put("PASSWORD",DBContract.ORACLE_PRO.password);
 		
+		// DataSourceFacotry 만드는
 		DataSourceFactory dataSourceFactory 
 				= new StdDataSourceFactory();
+		
 		dataSourceFactory.setProperties(props);
 		
+		// DataSourceFactory로 부터 DataSource를 요청
 		DataSource dataSource = dataSourceFactory.getDataSource();
 				
+		// TransactionFactory : 데이터를 대신 받아줄 중간 창고(공장)
 		TransactionFactory transactionFactory 
 				= new JdbcTransactionFactory();
 		
